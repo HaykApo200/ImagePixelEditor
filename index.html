@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="root">
+        <div id="canvasBox">
+            <canvas id="myCanvas"></canvas>
+        </div>
+       
+        <div class="buttonBox">
+            <div style="display: flex; justify-content: start; align-items: center;">
+                <p style="margin-right: 10px;">Orginal Image Size</p>
+                <label class="switch">  
+                    <input type="checkbox" id="manageImageSize">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div><input type="file" id="fileInput" accept="image/*"></div>
+            <div><button id="deletePhoto">Delete</button></div>
+        </div>
+        
+    </div>
+    <script src="manageSize.js"></script>
+    <script src="deletePhoto.js"></script>
+    <script src="main.js"></script>
+   
+</body>
+</html>
