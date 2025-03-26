@@ -12,7 +12,42 @@ body{
     justify-content: center;
     align-items: center;
 }
+p, h1, button, input, div, label{
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
 
+.file-input-wrapper {
+    display: inline-block;
+    font-family: 'Arial', sans-serif;  /* Change the font family here */
+}
+
+/* Hide the default file input */
+input[type="file"] {
+    display: none;
+}
+
+/* Style the button */
+.button-style {
+    padding: 10px 20px;
+    background-color: #2196F3;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.button-style:hover {
+    background-color: #2196F3;
+}
+
+/* This will display the chosen file name */
+.file-name {
+    margin-left: 10px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+}
 .buttonBox{
     display: flex;
     justify-content: center;
@@ -28,7 +63,7 @@ body{
     border: 5px solid black;
 }
 
-
+/* Switch Btn */
 .switch {
     position: relative;
     display: inline-block;
@@ -82,7 +117,6 @@ input:checked + .slider:before {
     transform: translateX(26px);
 }
   
-  /* Rounded sliders */
 .slider.round {
     border-radius: 34px;
 }
@@ -90,3 +124,5 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+

@@ -2,6 +2,9 @@ const manageImageSizeToggle = document.getElementById('manageImageSize');
 
 manageImageSizeToggle.addEventListener('change', () => {
     if(imageState){
+      transparencySlider.value = 100;
+      transparency = 100;
+      transparencyValue.textContent = 'Transparency: ' + transparency + "%" ;
        if(manageImageSizeToggle.checked){
           if((img.width !== canvas.width) && (img.height !== canvas.height)){
              canvasBox.style.height = `${img.height}px`;

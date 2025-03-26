@@ -21,41 +21,46 @@ fileInput.addEventListener('change', function(event) {
        reader.onload = function(e) {
            img.src = e.target.result;
            img.onload = function() {
-
-            if(manageImageSizeToggle.checked){
-               canvasBox.style.height = `${img.height}px`;
-               canvasBox.style.width =  `${img.width}px`;
-               canvas.width = img.width;
-               canvas.height = img.height;
-
-               ctx.drawImage(img,0,0, canvas.width, canvas.height);
-               const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-               sortPixelData(imageData.data, img.width, img.height);
-              // console.log(pixelData[123][234]);
-               
-
-            }else{
-               canvasBox.style.height = `${defaultHeight}px`;
-               canvasBox.style.width =  `${defaultWidth}px`;
-               canvas.width = defaultWidth;
-               canvas.height = defaultHeight;
-
-               ctx.drawImage(img,0,0, defaultWidth, defaultHeight);
-               const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-               sortPixelData(imageData.data, defaultWidth, defaultHeight);
-             //  console.log(pixelData[123][24]);
-               
-            }
-
+          
+               drawPhoto();
 
              //   console.log(`First pixel (RGBA): (${r}, ${g}, ${b}, ${a})`);
            };
+           
        };
        reader.readAsDataURL(file);
    }
 })
 
+function drawPhoto(){
+   transparencySlider.value = 100;
+   transparency = 100;
+   transparencyValue.textContent = 'Transparency: ' + transparency + "%" ;
 
+    if(manageImageSizeToggle.checked){
+       canvasBox.style.height = `${img.height}px`;
+       canvasBox.style.width =  `${img.width}px`;
+       canvas.width = img.width;
+       canvas.height = img.height;
 
+       ctx.drawImage(img,0,0, canvas.width, canvas.height);
+       const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+       sortPixelData(imageData.data, img.width, img.height);
+      // console.log(pixelData[123][234]);
+       
+
+    }else{
+       canvasBox.style.height = `${defaultHeight}px`;
+       canvasBox.style.width =  `${defaultWidth}px`;
+       canvas.width = defaultWidth;
+       canvas.height = defaultHeight;
+
+       ctx.drawImage(img,0,0, defaultWidth, defaultHeight);
+       const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+       sortPixelData(imageData.data, defaultWidth, defaultHeight);
+     //  console.log(pixelData[123][24]);
+       
+    }
+}
  
 

@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Pixel Editor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="transRange/transRnge.css">
 </head>
 <body>
     <div id="root">
@@ -20,11 +24,26 @@
                     <span class="slider round"></span>
                 </label>
             </div>
+
+            
+
             <div><input type="file" id="fileInput" accept="image/*"></div>
-            <div><button id="deletePhoto">Delete</button></div>
+            <button class="button-style"  onclick="document.getElementById('fileInput').click();">
+                Choose a file
+            </button>
+            <div><button id="deletePhoto" class="button-style">Delete</button></div>
+        </div>
+        <div class="buttonBox">
+            <div class="containerTrans">
+                <p>Set Transparency<p>
+                
+                <input type="range" id="transparencySlider" min="0" max="100" value="100">
+                <div id="transparencyValue">Transparency: 100%</div>
+            </div>
         </div>
         
     </div>
+    <script src="./transRange/transRange.js"></script>
     <script src="sortData.js"></script>
     <script src="changePixelColor.js"></script>
     <script src="manageSize.js"></script>
