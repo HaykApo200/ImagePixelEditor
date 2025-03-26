@@ -30,7 +30,9 @@ fileInput.addEventListener('change', function(event) {
 
                ctx.drawImage(img,0,0, canvas.width, canvas.height);
                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-               pixelData = imageData.data;
+               sortPixelData(imageData.data, img.width, img.height);
+              // console.log(pixelData[123][234]);
+               
 
             }else{
                canvasBox.style.height = `${defaultHeight}px`;
@@ -40,7 +42,9 @@ fileInput.addEventListener('change', function(event) {
 
                ctx.drawImage(img,0,0, defaultWidth, defaultHeight);
                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-               pixelData = imageData.data;
+               sortPixelData(imageData.data, defaultWidth, defaultHeight);
+             //  console.log(pixelData[123][24]);
+               
             }
 
 
