@@ -8,6 +8,7 @@ function changePixelColor(x, y, r, g, b, a) {
     data[3] = a;  
  
     ctx.putImageData(imageData, x, y);
+    
 }
   
 
