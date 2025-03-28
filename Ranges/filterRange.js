@@ -18,8 +18,15 @@ function listener(slider, value, filterType, name) {
             grayscale = slider.value; 
         }
 
+        let txtValue;
+        if(filterType === 'blur'){
+                txtValue = blurV;
+        }else if(filterType === 'grayscale'){
+                txtValue = grayscale;
+        }
+
         // Update the displayed text
-        value.textContent = `${name}: ${filterType === 'blur' ? blurV : grayscale}%`;
+        value.textContent = `${name}: ${txtValue} ${filterType === 'blur' ? " ": "%"}`;
 
         // Apply the filters when the sliders change
         if (imageState) {
