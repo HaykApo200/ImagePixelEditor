@@ -1,9 +1,9 @@
 const transparencySlider = document.getElementById('transparencySlider');
 const transparencyValue = document.getElementById('transparencyValue');
+let transparency = transparencySlider.value;
 
 transparencySlider.addEventListener('input', function(e) {
-
-        let transparency = transparencySlider.value;
+        transparency = transparencySlider.value;
        // console.log(e.target.value);
         transparencyValue.textContent = 'Opacity: ' + transparency + "%" ;
         if(imageState){

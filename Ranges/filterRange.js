@@ -6,34 +6,31 @@ const grayscaleSlider = document.getElementById('grayscaleSlider');
 const grayscaleValue = document.getElementById('grayscaleValue');
 let grayscale = grayscaleSlider.value;
 
-grayscaleSlider.addEventListener('input', function(e) {
-        grayscale = grayscaleSlider.value;
-        grayscaleValue.textContent = 'Grayscale: ' + grayscale + "%" ;
-        if(imageState){
-                ctx.filter = `grayscale(${grayscale}%) blur(${blurV}px)`;
-                if(manageImageSizeToggle.checked){
-                        ctx.clearRect(0, 0, img.width, img.height);
-                        ctx.drawImage(img,0,0, img.width, img.height);
-                     }else{                        
-                        ctx.clearRect(0, 0, canvas.width, canvas.height);
-                        ctx.drawImage(img,0,0, defaultWidth, defaultHeight);  
-                }
-        }
-        
-});
+listener(blurSlider, blurValue, 'blur', "Blur");
+listener(grayscaleSlider, grayscaleValue, 'grayscale', "Grayscale");
 
-blurSlider.addEventListener('input', function(e) {
-        blurV = blurSlider.value;
-        blurValue.textContent = 'Blur: ' + blurV;
-        if(imageState){
-                ctx.filter = `blur(${blurV}px) grayscale(${grayscale}%)`;
-                if(manageImageSizeToggle.checked){
-                        ctx.clearRect(0, 0, img.width, img.height);
-                        ctx.drawImage(img,0,0, img.width, img.height);
-                     }else{                        
-                        ctx.clearRect(0, 0, canvas.width, canvas.height);
-                        ctx.drawImage(img,0,0, defaultWidth, defaultHeight);  
-                }
+function listener(slider, value, filterType, name) {
+    slider.addEventListener('input', function(e) {
+      
+        if (filterType === 'blur') {
+            blurV = slider.value; 
+        } else if (filterType === 'grayscale') {
+            grayscale = slider.value; 
         }
-        
-});
+
+        // Update the displayed text
+        value.textContent = `${name}: ${filterType === 'blur' ? blurV : grayscale}%`;
+
+        // Apply the filters when the sliders change
+        if (imageState) {
+            ctx.filter = `blur(${blurV}px) grayscale(${grayscale}%)`; 
+            if (manageImageSizeToggle.checked) {
+                ctx.clearRect(0, 0, img.width, img.height);
+                ctx.drawImage(img, 0, 0, img.width, img.height);
+            } else {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.drawImage(img, 0, 0, defaultWidth, defaultHeight);
+            }
+        }
+    });
+}

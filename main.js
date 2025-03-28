@@ -35,9 +35,12 @@ fileInput.addEventListener('change', function(event) {
 })
 
 function drawPhoto(){
-   transparencySlider.value = 100;
-   transparency = 100;
-   transparencyValue.textContent = 'Transparency: ' + transparency + "%" ;
+   // transparencySlider.value = 100;
+   // transparency = 100;
+   // transparencyValue.textContent = 'Transparency: ' + transparency + "%" ;
+   // updateFilters(blurSlider, blurV, blurValue, 0,'Blur',false);
+   // updateFilters(transparencySlider,transparency, transparencyValue, 100, 'Transparency', true);
+   // updateFilters(grayscaleSlider, grayscale, grayscaleValue, 0, 'Grayscale' ,true);
     if(manageImageSizeToggle.checked){
        canvasBox.style.height = `${img.height}px`;
        canvasBox.style.width =  `${img.width}px`;
