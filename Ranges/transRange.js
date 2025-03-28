@@ -5,7 +5,7 @@ transparencySlider.addEventListener('input', function(e) {
 
         let transparency = transparencySlider.value;
         console.log(e.target.value);
-        transparencyValue.textContent = 'Transparency: ' + transparency + "%" ;
+        transparencyValue.textContent = 'Opacity: ' + transparency + "%" ;
         if(imageState){
                 ctx.globalAlpha = transparency / 100;
                 if(manageImageSizeToggle.checked){

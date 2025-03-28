@@ -9,6 +9,9 @@ deleteBtn.addEventListener("click", () => {
         ctx.clearRect(0,0,canvas.width,canvas.height);
         imageState = false;
         transparencySlider.value = 100;
+        blurSlider.value = 0;
+        blurV = 0;
+        blurValue.textContent = 'Blur: ' + blurV;
         transparency = 100;
         transparencyValue.textContent = 'Transparency: ' + transparency + "%" ;
     }

@@ -1,8 +1,8 @@
 /* Transparent Rnage */
-.containerTrans {
+.rangeContainer {
     text-align: center;
 }
-#transparencySlider {
+.range {
     width: 200px;
     height: 8px;
     -webkit-appearance: none;
@@ -11,7 +11,7 @@
     border-radius: 5px;
     outline: none;
 }
-#transparencySlider::-webkit-slider-thumb {
+.range::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 20px;
@@ -20,14 +20,14 @@
     border-radius: 50%;
     cursor: pointer;
 }
-#transparencySlider::-moz-range-thumb {
+.range::-moz-range-thumb {
     width: 20px;
     height: 20px;
     background: #2196F3;
     border-radius: 50%;
     cursor: pointer;
 }
-#transparencyValue {
+.rangeValue {
     margin-top: 10px;
     /* font-size: 20px;
     font-weight: bold; */

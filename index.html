@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="transRange/transRnge.css">
+    <link rel="stylesheet" href="transRange/range.css">
 </head>
 <body>
     <div id="root">
@@ -16,7 +16,26 @@
             <canvas id="myCanvas"></canvas>
         </div>
        
-        
+        <div class="buttonBox">
+
+            <div class="rangeContainer">
+                <hr>
+                <p>Set Opacity<p>
+                <input type="range" id="transparencySlider" class="range" min="0" max="100" value="100">
+                <div id="transparencyValue" class="rangeValue">Opacity: 100%</div>
+                <hr>
+            </div>
+
+            <div class="rangeContainer">
+                <hr>
+                <p>Set Blur<p>
+                <input type="range" id="blurSlider" class="range" min="0" max="10" value="0">
+                <div id="blurValue" class="rangeValue">Blur: 0</div>
+                <hr>
+            </div>
+            
+        </div>
+
         <div class="buttonBox">
             <div style="display: flex; justify-content: start; align-items: center;">
                 <p style="margin-right: 10px;">Orginal Image Size</p>
@@ -24,10 +43,7 @@
                     <input type="checkbox" id="manageImageSize">
                     <span class="slider round"></span>
                 </label>
-            </div>
-
-            
-            
+            </div>            
             <div><input type="file" id="fileInput" accept="image/*"></div>
             <button class="button-style"  onclick="document.getElementById('fileInput').click();">
                 Choose a file
@@ -37,19 +53,11 @@
                 <button id="savePhoto" class="button-style">Save</button>
             </div>
         </div>
-        <div class="buttonBox">
-            <div class="containerTrans">
-                <hr>
-                <p>Set Transparency<p>
-                <input type="range" id="transparencySlider" min="0" max="100" value="100">
-                <div id="transparencyValue">Transparency: 100%</div>
-                <hr>
-            </div>
-        </div>
         
     </div>
+    <script src="./Ranges/blurRange.js"></script>
     <script src="./saveDelete/savePhoto.js"></script>
-    <script src="./transRange/transRange.js"></script>
+    <script src="./Ranges/transRange.js"></script>
     <script src="sortData.js"></script>
     <script src="changePixelColor.js"></script>
     <script src="manageSize.js"></script>
