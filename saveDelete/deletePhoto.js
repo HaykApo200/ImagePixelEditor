@@ -8,11 +8,14 @@ deleteBtn.addEventListener("click", () => {
         canvasBox.style.width =  `${defaultWidth}px`;
         ctx.clearRect(0,0,canvas.width,canvas.height);
         imageState = false;
-        transparencySlider.value = 100;
-        blurSlider.value = 0;
-        blurV = 0;
-        blurValue.textContent = 'Blur: ' + blurV;
-        transparency = 100;
-        transparencyValue.textContent = 'Transparency: ' + transparency + "%" ;
+        updateFilters(blurSlider, blurV, blurValue, 0,'Blur',false);
+        updateFilters(transparencySlider,transparency, transparencyValue, 100, 'Transparency', true);
+        updateFilters(grayscaleSlider, grayscale, grayscaleValue, 0, 'Grayscale' ,true);
     }
 })
+
+function updateFilters(slider, filter, filterValue, value, name, percent){
+    slider.value = value;
+    filter = value;
+    filterValue.textContent = `${name}: ` + filter + `${percent ? "%" : ""}`;
+}

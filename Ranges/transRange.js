@@ -4,7 +4,7 @@ const transparencyValue = document.getElementById('transparencyValue');
 transparencySlider.addEventListener('input', function(e) {
 
         let transparency = transparencySlider.value;
-        console.log(e.target.value);
+       // console.log(e.target.value);
         transparencyValue.textContent = 'Opacity: ' + transparency + "%" ;
         if(imageState){
                 ctx.globalAlpha = transparency / 100;
